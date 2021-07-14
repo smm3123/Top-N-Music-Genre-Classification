@@ -6,31 +6,8 @@ from youtube_dl import YoutubeDL
 def youtube_search(search_str):
     """
     Function takes in a search string and returns a dict object containing
-    Youtube search results.
-    {
-      "kind": "youtube#searchResult",
-      "etag": etag,
-      "id": {
-        "kind": string,
-        "videoId": string,
-        "channelId": string,
-        "playlistId": string
-      },
-      "snippet": {
-        "publishedAt": datetime,
-        "channelId": string,
-        "title": string,
-        "description": string,
-        "thumbnails": {
-          (key): {
-            "url": string,
-            "width": unsigned integer,
-            "height": unsigned integer
-          }
-        },
-        "channelTitle": string,
-        "liveBroadcastContent": string
-      }
+    Youtube search results. Details of returned object below:
+    https://developers.google.com/youtube/v3/docs/search
     """
     api_key = "AIzaSyCfnPwKpsLH9lGp9bV5P3ZTI-rmZ3o8IPg"
 
