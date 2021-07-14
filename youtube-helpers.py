@@ -1,5 +1,6 @@
 import requests
 import json
+from youtube_dl import YoutubeDL
 
 
 def youtube_search(search_str):
@@ -37,3 +38,14 @@ def youtube_search(search_str):
                             "&type=video&key=" + api_key)
 
     return json.loads(response.text)
+
+
+def youtube_downloader(url):
+    """
+    Takes a youtube url and downloads a audiofile to the current working directory
+    full specs here: https://github.com/ytdl-org/youtube-dl
+    TODO - the youtube_dl library lets you somewhat control the audiotype, may be useful for processing
+    """
+
+    audio_downloader = YoutubeDL({'format': 'bestaudio'})
+    audio_downloader.extract_info(url)
