@@ -1,5 +1,7 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
 from youtube_dl import YoutubeDL
 
 
@@ -9,7 +11,8 @@ def youtube_search(search_str):
     Youtube search results. Details of returned object below:
     https://developers.google.com/youtube/v3/docs/search
     """
-    api_key = "AIzaSyCfnPwKpsLH9lGp9bV5P3ZTI-rmZ3o8IPg"
+    load_dotenv()
+    api_key = os.getenv('YOUTUBE_API_KEY')
 
     response = requests.get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=" + search_str +
                             "&type=video&key=" + api_key)
@@ -26,3 +29,6 @@ def youtube_downloader(url):
 
     audio_downloader = YoutubeDL({'format': 'bestaudio'})
     audio_downloader.extract_info(url)
+
+
+print(youtube_search("disc golf"))
