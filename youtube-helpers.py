@@ -31,4 +31,17 @@ def youtube_downloader(url):
     audio_downloader.extract_info(url)
 
 
-print(youtube_search("disc golf"))
+if __name__ == "__main__":
+    """
+    Allows user to input a  search term, then it downloads an audio file for most relevant 
+    result on YouTube
+    """
+
+    # Get user search query and get url for first search result
+    query = input("Please enter a search query for a YouTube video:")
+    results = youtube_search(query)
+    video_id = results["items"][1]["id"]["videoId"]
+    vid_url = 'https://www.youtube.com/watch?v='+video_id
+
+    # download audio for video specified
+    youtube_downloader(vid_url)
