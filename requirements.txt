@@ -4,3 +4,4 @@ matplotlib
 requests
 youtube_dl
 python-dotenv
+flask
