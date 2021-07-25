@@ -1,15 +1,14 @@
-import React from "react";
-import "./App.css";
-import HeaderBar from "./components/HeaderBar";
-import { FC } from "react";
+import React from 'react';
+import './App.css';
+import HeaderBar from './components/HeaderBar';
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Algorithm from "./Algorithm";
-import Team from "./Team";
-import BackendTest from "./BackendTest";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import Algorithm from './Algorithm';
+import Team from './Team';
+import BackendTest from './BackendTest';
 
-const App: FC = () => {
+const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
@@ -25,7 +24,7 @@ const App: FC = () => {
             <Route path="/aboutus">
               <Team />
             </Route>
-			<Route path="/test">
+            <Route path="/test">
               <BackendTest />
             </Route>
           </Switch>
