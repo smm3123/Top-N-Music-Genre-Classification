@@ -1,23 +1,23 @@
-import SearchBox from "./components/SearchBox";
-import VideoCard from "./components/VideoCard";
+import SearchBox from './components/SearchBox';
+
 import {
   Container,
   createStyles,
   makeStyles,
   Theme,
   Typography,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     body: {
-      paddingTop: "20px",
-      paddingBottom: "20px",
+      paddingTop: '20px',
+      paddingBottom: '20px',
     },
   })
 );
 
-const Home = () => {
+const Home: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -31,10 +31,10 @@ const Home = () => {
         Having a hard time deciding? Try one of these:
       </Typography>
       <Container>
+        {/* <VideoCard />
         <VideoCard />
         <VideoCard />
-        <VideoCard />
-        <VideoCard />
+        <VideoCard /> */}
       </Container>
     </div>
   );
