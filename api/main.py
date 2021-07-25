@@ -2,7 +2,6 @@ import requests
 import json
 import os
 from dotenv import load_dotenv
-from youtube_dl import YoutubeDL
 from flask import Flask
 
 app = Flask(__name__, static_folder="../build", static_url_path='/')
@@ -27,14 +26,3 @@ def youtube_search(query):
                             "&type=video&key=" + api_key)
 
     return json.loads(response.text)
-
-
-@app.route('/api/youtube-audio/<url>', methods=['GET'])
-def youtube_downloader(url):
-    """
-    Takes a youtube url and downloads a audiofile to the current working directory
-    full specs here: https://github.com/ytdl-org/youtube-dl
-    """
-
-    audio_downloader = YoutubeDL({'format': 'bestaudio'})
-    audio_downloader.extract_info(url)
