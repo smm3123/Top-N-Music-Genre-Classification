@@ -1,0 +1,8 @@
+numpy
+librosa
+matplotlib
+requests
+youtube_dl
+python-dotenv
+flask
+flask_cors

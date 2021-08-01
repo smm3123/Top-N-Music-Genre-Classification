@@ -29,14 +29,14 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const SearchBox: React.FC = () => {
+const TESTSearchBox: React.FC = () => {
   const [videos, setVideos] = useState<IYTSearchItem[]>([]);
   const [query, setQuery] = useState('');
   const classes = useStyles();
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const ytVideos = await operations.getYTSearchResultsAsync(query);
+    const ytVideos = await operations.getBackendYTSearchResultsAsync(query);
     setVideos(ytVideos);
   };
 
@@ -74,4 +74,4 @@ const SearchBox: React.FC = () => {
   );
 };
 
-export default SearchBox;
+export default TESTSearchBox;
