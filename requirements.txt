@@ -1,8 +1,0 @@
-dotenv
-numpy
-librosa
-matplotlib
-requests
-youtube_dl
-python-dotenv
-flask

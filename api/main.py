@@ -3,10 +3,13 @@ import json
 import os
 from dotenv import load_dotenv
 from flask import Flask
+from flask_cors import CORS
 from flask import request, jsonify
 from helpers import audio_helper
 
 app = Flask(__name__, static_folder="../build", static_url_path='/')
+CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/')
