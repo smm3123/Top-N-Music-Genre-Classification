@@ -1,9 +1,9 @@
 import librosa
 import numpy as np
-import os
 import wave
 import contextlib
 import sys
+# import os # Uncomment this and line 7 to hide tensorflow logs
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' # Uncomment to hide tensorflow logs
 import tensorflow.keras as keras
 

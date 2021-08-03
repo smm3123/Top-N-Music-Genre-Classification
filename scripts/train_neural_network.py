@@ -1,8 +1,7 @@
-import librosa
 import numpy as np
 import json
-import os
 from sklearn.model_selection import train_test_split
+# import os # Uncomment this and line 5 to hide tensorflow logs
 # os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2' # Uncomment to hide tensorflow logs
 import tensorflow.keras as keras
 
@@ -133,6 +132,7 @@ def build_model():
     ])
 
     return model
+
 
 if __name__ == '__main__':
     main()
