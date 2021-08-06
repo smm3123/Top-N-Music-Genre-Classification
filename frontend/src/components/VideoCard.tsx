@@ -3,6 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { CardActionArea, CardMedia } from '@material-ui/core';
+import { IVideoCardProps } from '../types';
 
 const useStyles = makeStyles({
   root: {
@@ -44,17 +45,11 @@ const useStyles = makeStyles({
   },
 });
 
-type CardProps = {
-  title: string;
-  channel: string;
-  thumbnail: string;
-};
-
-const VideoCard: React.FC<CardProps> = ({
+const VideoCard: React.FC<IVideoCardProps> = ({
   title,
   channel,
   thumbnail,
-}: CardProps) => {
+}: IVideoCardProps) => {
   const classes = useStyles();
 
   return (

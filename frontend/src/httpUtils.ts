@@ -12,4 +12,19 @@ const get = async <T extends unknown>(url: string): Promise<T> => {
   }
 };
 
-export { get };
+const post = async <T extends unknown>(
+  url: string,
+  requestObject: {}
+): Promise<T> => {
+  try {
+    const { data } = await axios.post(url, requestObject);
+    if (!data) {
+      throw Error('Data does not exist!');
+    }
+    return data;
+  } catch (error) {
+    throw Error(error);
+  }
+};
+
+export { get, post };
