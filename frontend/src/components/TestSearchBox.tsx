@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme: Theme) =>
       maxWidth: '410px',
       paddingBottom: '20px',
     },
+    padding: {
+      paddingBottom: '60px',
+    },
   })
 );
 
@@ -168,47 +171,53 @@ const TESTSearchBox: React.FC = () => {
 
   return (
     <div>
-      <form
-        className={classes.root}
-        noValidate
-        autoComplete="off"
-        onSubmit={onSubmit}
-      >
-        <TextField
-          className={classes.input}
-          variant="outlined"
-          label="YouTube Search"
-          onChange={(e) => setQuery(e.target.value)}
-        />
-      </form>
-      <Box className={classes.searchResults}>
-        {videos.map(
-          ({
-            id: { videoId },
-            snippet: { title, channelTitle, thumbnails },
-          }) => (
-            <VideoCard
-              key={videoId}
-              video={{
-                title: title,
-                channel: channelTitle,
-                thumbnail: thumbnails.default.url,
-                videoId: videoId,
-              }}
-              handleVideoSelect={handleVideoSelectList}
-            />
-          )
-        )}
-      </Box>
-      <Divider />
-      <Button
-        disabled={selectedVideo.videoId === ''}
-        variant="contained"
-        onClick={() => sendPostRequest(selectedVideo.videoId)}
-      >
-        POST Request
-      </Button>
-      <Results />
+      <div className={classes.padding}>
+        <form
+          className={classes.root}
+          noValidate
+          autoComplete="off"
+          onSubmit={onSubmit}
+        >
+          <TextField
+            className={classes.input}
+            variant="outlined"
+            label="YouTube Search"
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </form>
+        <Box className={classes.searchResults}>
+          {videos.map(
+            ({
+              id: { videoId },
+              snippet: { title, channelTitle, thumbnails },
+            }) => (
+              <VideoCard
+                key={videoId}
+                video={{
+                  title: title,
+                  channel: channelTitle,
+                  thumbnail: thumbnails.default.url,
+                  videoId: videoId,
+                }}
+                handleVideoSelect={handleVideoSelectList}
+              />
+            )
+          )}
+        </Box>
+
+        <Button
+          disabled={selectedVideo.videoId === ''}
+          variant="contained"
+          onClick={() => sendPostRequest(selectedVideo.videoId)}
+        >
+          POST Request
+        </Button>
+      </div>
+
+      <div className={classes.padding}>
+        <Divider />
+        <Results />
+      </div>
     </div>
   );
 };
