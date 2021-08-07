@@ -2,7 +2,6 @@ from helpers import youtube_helper
 from models.audio_file import AudioFile
 import tensorflow.keras as keras
 import numpy as np
-import os
 import json
 
 
