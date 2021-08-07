@@ -44,4 +44,4 @@ class AudioFile:
         :return: np.ndarray of mel spectrogram
         """
         mel_spectrogram = librosa.feature.melspectrogram(y=self.audio_time_series, sr=self.sampling_rate)
-        return librosa.power_to_db(mel_spectrogram, ref=np.max)
+        return mel_spectrogram
