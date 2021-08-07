@@ -7,3 +7,5 @@ python-dotenv
 flask
 flask_cors
 ffmpeg-python
+tensorflow
+keras

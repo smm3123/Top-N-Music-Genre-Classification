@@ -40,6 +40,5 @@ def get_genres():
     :return: Response object with genre classifications
     """
     youtube_url = request.json['youtube_url']
-    audio_helper.get_genres(youtube_url)
-    res = {'foo': 'bar'}  # Placeholder response for testing purposes
-    return jsonify(res)
+    res = audio_helper.get_genres(youtube_url)
+    return res
