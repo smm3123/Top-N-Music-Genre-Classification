@@ -10,7 +10,7 @@ import BackendTest from './BackendTest';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router forceRefresh={true}>
       <div className="App">
         <HeaderBar />
         <div className="content">

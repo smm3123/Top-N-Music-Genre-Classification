@@ -3,6 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { CardActionArea, CardMedia } from '@material-ui/core';
+import { IVideoCardProps } from '../types';
 
 const useStyles = makeStyles({
   root: {
@@ -44,33 +45,37 @@ const useStyles = makeStyles({
   },
 });
 
-type CardProps = {
-  title: string;
-  channel: string;
-  thumbnail: string;
-};
-
-const VideoCard: React.FC<CardProps> = ({
-  title,
-  channel,
-  thumbnail,
-}: CardProps) => {
+const VideoCard: React.FC<IVideoCardProps> = ({
+  video,
+  handleVideoSelect,
+}: IVideoCardProps) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} variant="outlined">
+    <Card
+      className={classes.root}
+      variant="outlined"
+      onClick={() =>
+        handleVideoSelect(
+          video.title,
+          video.channel,
+          video.thumbnail,
+          video.videoId
+        )
+      }
+    >
       <CardActionArea className={classes.details}>
         <CardMedia
           className={classes.preview}
-          image={thumbnail}
+          image={video.thumbnail}
           title="video thumbnail"
         />
         <CardContent className={classes.content}>
           <span className={classes.span}>
-            <Typography className={classes.title}>{title}</Typography>
+            <Typography className={classes.title}>{video.title}</Typography>
           </span>
           <Typography className={classes.channel} color="textSecondary">
-            {channel}
+            {video.channel}
           </Typography>
         </CardContent>
       </CardActionArea>
