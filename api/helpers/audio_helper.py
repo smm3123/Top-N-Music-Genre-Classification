@@ -37,7 +37,6 @@ def get_genre_confidence_levels(mel_spectrogram):
                        }
 
     # Load the model
-    print(os.path.join('music_classification_cnn.h5'))
     model = keras.models.load_model(MODEL)
 
     # Add in an axis (channel) to match input shape
