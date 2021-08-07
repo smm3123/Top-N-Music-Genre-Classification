@@ -18,15 +18,14 @@ def download_audio_from_youtube(url):
     return file_id
 
 
-def delete_audio_file(file_name):
+def delete_audio_file(file_path):
     """
     Deletes the given audio file from the temp folder
-    :param file_name: audio file name with the following format: UUID.m4a
+    :param file_path: audio file name with the following format: UUID.m4a
     :return: bool value representing operation success
     """
     success = False
-    path = 'temp/' + file_name
-    if os.path.exists(path):
-        os.remove(path)
+    if os.path.exists(file_path):
+        os.remove(file_path)
         success = True
     return success

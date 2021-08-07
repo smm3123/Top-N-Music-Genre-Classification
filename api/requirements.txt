@@ -6,3 +6,4 @@ youtube_dl
 python-dotenv
 flask
 flask_cors
+ffmpeg-python
