@@ -1,5 +1,6 @@
 import librosa
 import numpy as np
+import ffmpeg
 
 
 class AudioFile:
@@ -7,10 +8,27 @@ class AudioFile:
     Class containing relevant data about a given audio file
     """
 
-    def __init__(self, path):
-        self.audio_time_series, self.sampling_rate = librosa.load(path)
+    def __init__(self, path, is_for_machine_learning_input):
+        self.duration = self._get_duration(path)
+        self.audio_time_series, self.sampling_rate = self._librosa_load(path, is_for_machine_learning_input)
         self.db_spectrogram = self._get_db_scaled_spectrogram()
         self.mel_spectrogram = self._get_mel_spectrogram()
+
+    def _get_duration(self, path):
+        """
+        Uses ffmpeg to get audio clip duration
+        :return: float value representing length in seconds
+        """
+        duration = ffmpeg.probe(path)['format']['duration']
+        return float(duration)
+
+    def _librosa_load(self, path, is_for_machine_learning_input):
+        if is_for_machine_learning_input:
+            # Input for the machine learning model takes a 3 second clip from 1/3 of the way through the audio file
+            return librosa.load(path, duration=3, offset=self.duration // 3)
+        else:
+            # Use entire audio clip, primarily for generating audio analysis visuals
+            return librosa.load(path)
 
     def _get_db_scaled_spectrogram(self):
         """

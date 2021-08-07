@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 from flask import Flask
 from flask_cors import CORS
-from flask import request, jsonify
+from flask import request
 from helpers import audio_helper
 
 app = Flask(__name__, static_folder="../build", static_url_path='/')
@@ -40,6 +40,5 @@ def get_genres():
     :return: Response object with genre classifications
     """
     youtube_url = request.json['youtube_url']
-    audio_helper.get_genres(youtube_url)
-    res = {'foo': 'bar'}  # Placeholder response for testing purposes
-    return jsonify(res)
+    res = audio_helper.get_genres(youtube_url)
+    return res
