@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core';
-import { findByLabelText } from '@testing-library/react';
 import BioCard from './components/BioCard';
 import biodata from './components/static/biodata.json';
 import teamstrings from './components/static/teamstrings.json';
@@ -31,16 +30,6 @@ const Team: React.FC = () => {
           https://github.com/smm3123/Top-N-Music-Genre-Classification
         </a>
       </p>
-      {/* <ul>
-        {biodata.map((person) => (
-          <li key={person.id}>
-            {person.name}
-            {' - '}
-            {person.role}
-            <p>{person.github}</p>
-          </li>
-        ))}
-      </ul> */}
 
       {biodata.map((person) => (
         <BioCard

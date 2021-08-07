@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardContent,
-  makeStyles,
-  Paper,
-  Typography,
-} from '@material-ui/core';
+import { makeStyles, Paper, Typography } from '@material-ui/core';
 import { IBioCardProps } from '../types';
 
 const useStyles = makeStyles({

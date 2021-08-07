@@ -46,26 +46,36 @@ const useStyles = makeStyles({
 });
 
 const VideoCard: React.FC<IVideoCardProps> = ({
-  title,
-  channel,
-  thumbnail,
+  video,
+  handleVideoSelect,
 }: IVideoCardProps) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root} variant="outlined">
+    <Card
+      className={classes.root}
+      variant="outlined"
+      onClick={() =>
+        handleVideoSelect(
+          video.title,
+          video.channel,
+          video.thumbnail,
+          video.videoId
+        )
+      }
+    >
       <CardActionArea className={classes.details}>
         <CardMedia
           className={classes.preview}
-          image={thumbnail}
+          image={video.thumbnail}
           title="video thumbnail"
         />
         <CardContent className={classes.content}>
           <span className={classes.span}>
-            <Typography className={classes.title}>{title}</Typography>
+            <Typography className={classes.title}>{video.title}</Typography>
           </span>
           <Typography className={classes.channel} color="textSecondary">
-            {channel}
+            {video.channel}
           </Typography>
         </CardContent>
       </CardActionArea>

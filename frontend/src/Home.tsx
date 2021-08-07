@@ -19,6 +19,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Home: React.FC = () => {
   const classes = useStyles();
+  // const [selectedVideo, setSelectedVideo] = useState<IVideo>({
+  //   title: '',
+  //   channel: '',
+  //   thumbnail: '',
+  //   videoId: '',
+  // });
 
   return (
     <div className="home">
@@ -26,7 +32,7 @@ const Home: React.FC = () => {
         Check out our music classification neural network! Search for a song on
         YouTube to begin:
       </Typography>
-      <SearchBox />
+      {/* <SearchBox setSelectedVideo={setSelectedVideo} /> */}
       <Typography className={classes.body}>
         Having a hard time deciding? Try one of these:
       </Typography>

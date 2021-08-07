@@ -1,14 +1,12 @@
 import {
   AppBar,
   Box,
-  Button,
   createStyles,
   makeStyles,
   Theme,
   Toolbar,
-  Typography,
 } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,9 +15,22 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       flexGrow: 1,
+      textAlign: 'left',
+    },
+    linkstyles: {
+      backgroundColor: 'transparent',
+      color: 'inherit',
+      padding: '14px 25px',
+      textAlign: 'center',
+      textDecoration: 'none',
     },
   })
 );
+
+const linkactive = {
+  borderBottom: 'solid 3px #fff',
+  paddingBottom: '1em',
+};
 
 const HeaderBar: React.FC = () => {
   const classes = useStyles();
@@ -28,22 +39,42 @@ const HeaderBar: React.FC = () => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title} align="left">
-            Music Classifier
-          </Typography>
+          <Box className={classes.title}>
+            <NavLink
+              exact
+              to="/"
+              className={classes.linkstyles}
+              activeStyle={linkactive}
+            >
+              Music Classifier
+            </NavLink>
+          </Box>
+
           <Box>
-            <Button component={Link} to="/" color="inherit">
-              Home
-            </Button>
-            <Button component={Link} to="/algorithm" color="inherit">
+            <NavLink
+              exact
+              to="/algorithm"
+              className={classes.linkstyles}
+              activeStyle={linkactive}
+            >
               How It Works
-            </Button>
-            <Button component={Link} to="/aboutus" color="inherit">
+            </NavLink>
+            <NavLink
+              exact
+              to="/aboutus"
+              className={classes.linkstyles}
+              activeStyle={linkactive}
+            >
               About Us
-            </Button>
-            <Button component={Link} to="/test" color="inherit">
+            </NavLink>
+            <NavLink
+              exact
+              to="/test"
+              className={classes.linkstyles}
+              activeStyle={linkactive}
+            >
               Backend Test
-            </Button>
+            </NavLink>
           </Box>
         </Toolbar>
       </AppBar>
