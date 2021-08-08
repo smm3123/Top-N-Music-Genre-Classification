@@ -2,7 +2,7 @@ import requests
 import json
 import os
 from dotenv import load_dotenv
-from flask import Flask, logging
+from flask import Flask
 from flask_cors import CORS
 from flask import request
 from helpers import audio_helper
