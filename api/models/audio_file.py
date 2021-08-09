@@ -10,7 +10,7 @@ class AudioFile:
 
     def __init__(self, path, is_for_machine_learning_input):
         # temp removing the durations calc..... ffmpeg.probe(path) is creating errors in the deployment
-        #self.duration = self._get_duration(path)
+        # self.duration = self._get_duration(path)
         self.audio_time_series, self.sampling_rate = self._librosa_load(path, is_for_machine_learning_input)
         self.db_spectrogram = self._get_db_scaled_spectrogram()
         self.mel_spectrogram = self._get_mel_spectrogram()
