@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Algorithm from './Algorithm';
 import Team from './Team';
-import BackendTest from './BackendTest';
 
 const App: React.FC = () => {
   return (
@@ -23,9 +22,6 @@ const App: React.FC = () => {
             </Route>
             <Route path="/aboutus">
               <Team />
-            </Route>
-            <Route path="/test">
-              <BackendTest />
             </Route>
           </Switch>
         </div>

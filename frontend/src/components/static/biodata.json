@@ -3,28 +3,52 @@
     "id": 0,
     "name": "Janet Anderson",
     "github": "https://github.com/ja-osu",
-		"role": "Neural Network Development",
-    "blurb": "blah blah blah"
+    "role": "Neural Network Development",
+    "blurb": "blah blah blah",
+    "video": {
+      "title": "Pop 2019 Hits",
+      "channel": "Love Music",
+      "thumbnail": "https://i.ytimg.com/vi/sIJfYix8RUI/default.jpg",
+      "videoId": "sIJfYix8RUI"
+    }
   },
   {
     "id": 1,
     "name": "Andrew Brown",
     "github": "https://github.com/ahb37",
-		"role": "Cloud Deployment and Integration",
-    "blurb": "blah blah blah"
+    "role": "Cloud Deployment and Integration",
+    "blurb": "blah blah blah",
+    "video": {
+      "title": "Pop 2019 Hits",
+      "channel": "Love Music",
+      "thumbnail": "https://i.ytimg.com/vi/sIJfYix8RUI/default.jpg",
+      "videoId": "sIJfYix8RUI"
+    }
   },
   {
     "id": 2,
     "name": "Syed Mahdi",
     "github": "https://github.com/smm3123",
-		"role": "Audio Processing and Analysis",
-    "blurb": "blah blah blah"
+    "role": "Audio Processing and Analysis",
+    "blurb": "blah blah blah",
+    "video": {
+      "title": "Pop 2019 Hits",
+      "channel": "Love Music",
+      "thumbnail": "https://i.ytimg.com/vi/sIJfYix8RUI/default.jpg",
+      "videoId": "sIJfYix8RUI"
+    }
   },
   {
     "id": 3,
     "name": "Andy Tran",
     "github": "https://github.com/tran-dy",
-		"role": "Frontend Development",
-    "blurb": "blah blah blah"
+    "role": "Frontend Development",
+    "blurb": "blah blah blah",
+    "video": {
+      "title": "Pop 2019 Hits",
+      "channel": "Love Music",
+      "thumbnail": "https://i.ytimg.com/vi/sIJfYix8RUI/default.jpg",
+      "videoId": "sIJfYix8RUI"
+    }
   }
 ]
