@@ -5,8 +5,9 @@ import numpy as np
 import json
 
 
-#MODEL = '.\\models\\music_classification_cnn.h5'  # Path set to accommodate flask home directory
+# MODEL = '.\\models\\music_classification_cnn.h5'  # Path set to accommodate flask home directory
 MODEL = './models/music_classification_cnn.h5'  # Path set to accommodate flask home directory
+
 
 def get_genres(youtube_url):
     """
