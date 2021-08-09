@@ -67,14 +67,6 @@ const HeaderBar: React.FC = () => {
             >
               About Us
             </NavLink>
-            <NavLink
-              exact
-              to="/test"
-              className={classes.linkstyles}
-              activeStyle={linkactive}
-            >
-              Backend Test
-            </NavLink>
           </Box>
         </Toolbar>
       </AppBar>

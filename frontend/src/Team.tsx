@@ -5,13 +5,17 @@ import teamstrings from './components/static/teamstrings.json';
 
 const useStyles = makeStyles({
   team: {
-    // maxWidth: '800px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'right',
     textAlign: 'left',
     paddingLeft: '80px',
     paddingRight: '80px',
+  },
+  memebers: {
+    display: 'flex',
+    flexDirection: 'column',
+    paddingTop: '20px',
   },
 });
 
@@ -30,16 +34,20 @@ const Team: React.FC = () => {
           https://github.com/smm3123/Top-N-Music-Genre-Classification
         </a>
       </p>
-
-      {biodata.map((person) => (
-        <BioCard
-          id={person.id}
-          name={person.name}
-          github={person.github}
-          role={person.role}
-          blurb={person.blurb}
-        />
-      ))}
+      <div className={classes.memebers}>
+        {biodata
+          .sort((a, b) => 0.5 - Math.random())
+          .map((person) => (
+            <BioCard
+              id={person.id}
+              name={person.name}
+              github={person.github}
+              role={person.role}
+              blurb={person.blurb}
+              video={person.video}
+            />
+          ))}
+      </div>
     </div>
   );
 };

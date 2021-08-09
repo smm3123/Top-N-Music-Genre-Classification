@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import { Box } from '@material-ui/core';
+import { Box, Button } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
-import { IVideo, IYTSearchItem } from '../types';
+import { ISearchBoxProps, IYTSearchItem } from '../types';
 import operations from '../operations';
 
 import VideoCard from './VideoCard';
@@ -26,10 +26,15 @@ const useStyles = makeStyles((theme: Theme) =>
       maxWidth: '410px',
       paddingBottom: '20px',
     },
+    analyze: { margin: '20px' },
   })
 );
 
-const SearchBox: React.FC = () => {
+const SearchBox: React.FC<ISearchBoxProps> = ({
+  handleSearchSelect,
+  SearchSelect,
+  handleAnalysisSelect,
+}) => {
   const [videos, setVideos] = useState<IYTSearchItem[]>([]);
   const [query, setQuery] = useState('');
 
@@ -37,7 +42,7 @@ const SearchBox: React.FC = () => {
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const ytVideos = await operations.getYTSearchResultsAsync(query);
+    const ytVideos = await operations.getBackendYTSearchResultsAsync(query);
     setVideos(ytVideos);
   };
 
@@ -47,13 +52,7 @@ const SearchBox: React.FC = () => {
     thumbnail: string,
     videoId: string
   ) => {
-    // setSelectedVideo(
-    //   title: title,
-    //   channel: channel,
-    //   thumbnail: thumbnail,
-    //   videoId: videoId,
-    // );
-    // setSelectedVideo(title, channel, thumbnail, videoId);
+    handleSearchSelect({ title, channel, thumbnail, videoId });
     console.log('Video selected, title: ' + title);
   };
 
@@ -87,10 +86,23 @@ const SearchBox: React.FC = () => {
                 videoId: videoId,
               }}
               handleVideoSelect={handleVideoSelect}
+              searchSelect={SearchSelect}
             />
           )
         )}
       </Box>
+
+      {videos.length !== 0 && (
+        <Button
+          disabled={SearchSelect.videoId === ''}
+          variant="contained"
+          color="primary"
+          onClick={() => handleAnalysisSelect(1)}
+          className={classes.analyze}
+        >
+          Analyze
+        </Button>
+      )}
     </div>
   );
 };

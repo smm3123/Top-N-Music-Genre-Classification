@@ -17,17 +17,13 @@ export interface IYTSearchItem {
   };
 }
 
-export interface IAlgoResponse {
-  top_prediction: string;
-  top_confidence_probs: {};
-}
-
 export interface IBioCardProps {
   id: number;
   name: string;
   github: string;
   role: string;
   blurb: string;
+  video: IVideo;
 }
 
 export interface IVideoCardProps {
@@ -38,6 +34,7 @@ export interface IVideoCardProps {
     videoId: string
   ): any;
   video: IVideo;
+  searchSelect?: IVideo;
 }
 
 export interface IVideo {
@@ -63,13 +60,13 @@ export interface IClassResponse {
   };
 }
 
-// const classResults = {
-//   top_prediction: 'blues',
-//   top_confidence_probs: {
-//     blues: '0.97673905',
-//     rock: '0.017715627',
-//     country: '0.005420457',
-//     reggae: '5.588101e-05',
-//     pop: '2.9152101e-05',
-//   },
-// };
+export interface ISearchBoxProps {
+  handleSearchSelect: (video: IVideo) => void;
+  SearchSelect: IVideo;
+  handleAnalysisSelect: (flag: number) => void;
+}
+
+export interface IResultsProps {
+  selectedVideo: IVideo;
+  analysisTrigger: number;
+}

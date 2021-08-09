@@ -7,7 +7,7 @@ const YT_PATH = 'https://www.googleapis.com/youtube/v3/search';
 const MAX_RESULTS = 10;
 const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
-// official API call
+// direct API call
 const getYTSearchResultsAsync = async (
   query: string
 ): Promise<IYTSearchItem[]> => {
@@ -24,12 +24,14 @@ const getYTSearchResultsAsync = async (
 };
 
 // our API call
-const BACKEND_PATH =
+const YTSEARCHBACKEND_PATH =
   'https://api-dot-osu-capstone-testing.uc.r.appspot.com/api/youtube-search-results/';
 const getBackendYTSearchResultsAsync = async (
   query: string
 ): Promise<IYTSearchItem[]> => {
-  const { items } = await get<IYTSearchResultResponse>(BACKEND_PATH + query);
+  const { items } = await get<IYTSearchResultResponse>(
+    YTSEARCHBACKEND_PATH + query
+  );
   return items;
 };
 

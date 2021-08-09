@@ -6,7 +6,7 @@ import { CardActionArea, CardMedia } from '@material-ui/core';
 import { IVideoCardProps } from '../types';
 
 const useStyles = makeStyles({
-  root: {
+  card: {
     width: '380px',
     height: '90px',
     display: 'flex',
@@ -43,17 +43,29 @@ const useStyles = makeStyles({
     width: '220px',
     height: '50px',
   },
+  cardActive: {
+    width: '380px',
+    height: '90px',
+    display: 'flex',
+    margin: '5px',
+    background: 'rgba(63, 81, 181, 0.30)',
+  },
 });
 
 const VideoCard: React.FC<IVideoCardProps> = ({
   video,
   handleVideoSelect,
+  searchSelect,
 }: IVideoCardProps) => {
   const classes = useStyles();
 
   return (
     <Card
-      className={classes.root}
+      className={
+        searchSelect?.videoId === video.videoId
+          ? classes.cardActive
+          : classes.card
+      }
       variant="outlined"
       onClick={() =>
         handleVideoSelect(
