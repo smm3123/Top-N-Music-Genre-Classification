@@ -5,8 +5,8 @@ import numpy as np
 import json
 
 
-MODEL = '.\\models\\music_classification_cnn.h5'  # Path set to accommodate flask home directory
-
+#MODEL = '.\\models\\music_classification_cnn.h5'  # Path set to accommodate flask home directory
+MODEL = './models/music_classification_cnn.h5'  # Path set to accommodate flask home directory
 
 def get_genres(youtube_url):
     """
@@ -14,7 +14,7 @@ def get_genres(youtube_url):
     """
     file_id = youtube_helper.download_audio_from_youtube(youtube_url)
     file_name = f'{file_id}.m4a'
-    file_path = f'temp/{file_name}'
+    file_path = f'/tmp/{file_name}'
     # audio_file = AudioFile(file_path, False)
     classifier_input = AudioFile(file_path, True).mel_spectrogram  # Gets Mel spectrogram data for 3 second clip
     confidence_levels = get_genre_confidence_levels(classifier_input)

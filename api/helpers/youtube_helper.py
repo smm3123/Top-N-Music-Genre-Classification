@@ -12,7 +12,7 @@ def download_audio_from_youtube(url):
     file_id = str(uuid.uuid4())  # UUID ensures no duplicate file names are saved
     audio_downloader = YoutubeDL({
         'format': 'm4a',
-        'outtmpl': 'temp/' + file_id + '.%(ext)s'  # Saves audio file in a temp folder
+        'outtmpl': '/tmp/' + file_id + '.%(ext)s'  # Saves audio file in a temp folder
     })
     audio_downloader.extract_info(url)
     return file_id

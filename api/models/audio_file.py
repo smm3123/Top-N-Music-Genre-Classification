@@ -9,7 +9,8 @@ class AudioFile:
     """
 
     def __init__(self, path, is_for_machine_learning_input):
-        self.duration = self._get_duration(path)
+        # temp removing the durations calc..... ffmpeg.probe(path) is creating errors in the deployment
+        #self.duration = self._get_duration(path)
         self.audio_time_series, self.sampling_rate = self._librosa_load(path, is_for_machine_learning_input)
         self.db_spectrogram = self._get_db_scaled_spectrogram()
         self.mel_spectrogram = self._get_mel_spectrogram()
@@ -25,7 +26,7 @@ class AudioFile:
     def _librosa_load(self, path, is_for_machine_learning_input):
         if is_for_machine_learning_input:
             # Input for the machine learning model takes a 3 second clip from 1/3 of the way through the audio file
-            return librosa.load(path, duration=3, offset=self.duration // 3)
+            return librosa.load(path, duration=3, offset=30)
         else:
             # Use entire audio clip, primarily for generating audio analysis visuals
             return librosa.load(path)
