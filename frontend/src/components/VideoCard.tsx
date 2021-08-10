@@ -48,7 +48,8 @@ const useStyles = makeStyles({
     height: '90px',
     display: 'flex',
     margin: '5px',
-    background: 'rgba(63, 81, 181, 0.30)',
+    // background: 'rgba(63, 81, 181, 0.30)',
+    background: 'rgba(100, 181, 246, .3)',
   },
 });
 

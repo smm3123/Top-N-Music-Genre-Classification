@@ -6,10 +6,10 @@
     "role": "Neural Network Development",
     "blurb": "blah blah blah",
     "video": {
-      "title": "Pop 2019 Hits",
-      "channel": "Love Music",
-      "thumbnail": "https://i.ytimg.com/vi/sIJfYix8RUI/default.jpg",
-      "videoId": "sIJfYix8RUI"
+      "title": "Lord Huron - Ends of the Earth (Official Music Video)",
+      "channel": "Lord Huron",
+      "thumbnail": "https://i.ytimg.com/vi/-MH-UmYkXiM/default.jpg",
+      "videoId": "-MH-UmYkXiM"
     }
   },
   {
@@ -19,10 +19,10 @@
     "role": "Cloud Deployment and Integration",
     "blurb": "blah blah blah",
     "video": {
-      "title": "Pop 2019 Hits",
-      "channel": "Love Music",
-      "thumbnail": "https://i.ytimg.com/vi/sIJfYix8RUI/default.jpg",
-      "videoId": "sIJfYix8RUI"
+      "title": "Taylor Swift - Blank Space",
+      "channel": "TaylorSwiftVEVO",
+      "thumbnail": "https://i.ytimg.com/vi/e-ORhEE9VVg/default.jpg",
+      "videoId": "e-ORhEE9VVg"
     }
   },
   {
@@ -32,10 +32,10 @@
     "role": "Audio Processing and Analysis",
     "blurb": "blah blah blah",
     "video": {
-      "title": "Pop 2019 Hits",
-      "channel": "Love Music",
-      "thumbnail": "https://i.ytimg.com/vi/sIJfYix8RUI/default.jpg",
-      "videoId": "sIJfYix8RUI"
+      "title": "Post Malone - Take What You Want (Audio) ft. Ozzy Osbourne, Travis Scott",
+      "channel": "PostMaloneVEVO",
+      "thumbnail": "https://i.ytimg.com/vi/LYa_ReqRlcs/default.jpg",
+      "videoId": "LYa_ReqRlcs"
     }
   },
   {
@@ -45,10 +45,10 @@
     "role": "Frontend Development",
     "blurb": "blah blah blah",
     "video": {
-      "title": "Pop 2019 Hits",
-      "channel": "Love Music",
-      "thumbnail": "https://i.ytimg.com/vi/sIJfYix8RUI/default.jpg",
-      "videoId": "sIJfYix8RUI"
+      "title": "Joji - Tick Tock (Official Video)",
+      "channel": "Joji",
+      "thumbnail": "https://i.ytimg.com/vi/2FCo7OxVoeY/default.jpg",
+      "videoId": "2FCo7OxVoeY"
     }
   }
 ]

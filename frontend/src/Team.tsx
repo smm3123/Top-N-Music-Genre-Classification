@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import BioCard from './components/BioCard';
 import biodata from './components/static/biodata.json';
-import teamstrings from './components/static/teamstrings.json';
 
 const useStyles = makeStyles({
   team: {
@@ -9,8 +8,10 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     alignItems: 'right',
     textAlign: 'left',
-    paddingLeft: '80px',
-    paddingRight: '80px',
+    paddingLeft: '10%',
+    paddingRight: '10%',
+    marginBottom: '20em',
+    lineHeight: '1.5',
   },
   memebers: {
     display: 'flex',
@@ -25,8 +26,14 @@ const Team: React.FC = () => {
   return (
     <div className={classes.team}>
       <h1>The Team</h1>
-      <p>CS467 - Oregon State University - Summer 2021</p>
-      <p>{teamstrings.summary}</p>
+      <h2>CS467 - Oregon State University - Summer 2021</h2>
+      <p>
+        Welcome to our music classifier neural network! Our goals for this
+        project were to develop a music genre classification algorithm and
+        deploy it as a web application. This capstone project was completed as
+        part of Oregon State University’s Computer Science Post Baccalaureate
+        degree program.
+      </p>
 
       <p>
         Project GitHub:{' '}

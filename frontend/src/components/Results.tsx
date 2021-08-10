@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   CircularProgress,
   createStyles,
@@ -13,7 +14,6 @@ import {
   Theme,
 } from '@material-ui/core';
 import axios from 'axios';
-import { useState } from 'react';
 import { IClassResponse, IResultsProps } from '../types';
 import VideoCard from './VideoCard';
 
@@ -76,6 +76,7 @@ const Results: React.FC<IResultsProps> = ({
       const { data } = await axios.post(
         //'http://127.0.0.1:5000/api/get_genres',
         'https://api-dot-osu-capstone-testing.uc.r.appspot.com/api/get_genres',
+        // 'http://127.0.0.1:5000/api/get_genres',
         payload
       );
 
@@ -142,22 +143,26 @@ const Results: React.FC<IResultsProps> = ({
 
     return (
       <div className={classes.root}>
-        <h1>Input</h1>
-        <VideoCard
-          video={{
-            title: selectedVideo.title,
-            channel: selectedVideo.channel,
-            thumbnail: selectedVideo.thumbnail,
-            videoId: selectedVideo.videoId,
-          }}
-          handleVideoSelect={handleVideoSelectSingle}
-        />
-        <h1>Output</h1>
-        {classResults.top_prediction === '' ? (
-          <CircularProgress />
-        ) : (
-          resultsTable({})
-        )}
+        <div>
+          <h1>Input</h1>
+          <VideoCard
+            video={{
+              title: selectedVideo.title,
+              channel: selectedVideo.channel,
+              thumbnail: selectedVideo.thumbnail,
+              videoId: selectedVideo.videoId,
+            }}
+            handleVideoSelect={handleVideoSelectSingle}
+          />
+        </div>
+        <div>
+          <h1>Output</h1>
+          {classResults.top_prediction === '' ? (
+            <CircularProgress />
+          ) : (
+            resultsTable({})
+          )}
+        </div>
       </div>
     );
   } else {

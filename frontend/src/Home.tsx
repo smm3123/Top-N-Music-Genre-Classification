@@ -1,15 +1,21 @@
 import SearchBox from './components/SearchBox';
 
-import { createStyles, makeStyles, Theme, Typography } from '@material-ui/core';
+import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import { useState } from 'react';
 import { IVideo } from './types';
 import Results from './components/Results';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    body: {
+    introduction: {
       paddingTop: '20px',
       paddingBottom: '20px',
+    },
+    home: {
+      // paddingLeft: '15em',
+      // paddingRight: '15em',
+      // marginBottom: '20em',
+      lineHeight: '1.5',
     },
   })
 );
@@ -24,7 +30,6 @@ const Home: React.FC = () => {
   });
 
   const [analysisTrigger, setAnalysisTrigger] = useState(0);
-
   const handleSearchSelect = (video: IVideo) => {
     setSelectedVideo({
       title: video.title,
@@ -39,12 +44,12 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="home">
+    <div className={classes.home}>
       {analysisTrigger === 0 && (
-        <Typography className={classes.body}>
-          Check out our music classification neural network! Search for a song
-          on YouTube to begin:
-        </Typography>
+        <div>
+          <h2>Welcome to our music genre classifcation neural network!</h2>
+          <p>Search for a song on YouTube to begin:</p>
+        </div>
       )}
       {analysisTrigger === 0 && (
         <SearchBox
