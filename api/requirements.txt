@@ -9,3 +9,4 @@ flask_cors
 ffmpeg-python
 tensorflow
 keras
+gunicorn
