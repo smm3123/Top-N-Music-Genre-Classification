@@ -74,6 +74,7 @@ const Results: React.FC<IResultsProps> = ({
         youtube_url: YT_PREFIX + videoId,
       };
       const { data } = await axios.post(
+        //'http://127.0.0.1:5000/api/get_genres',
         'https://api-dot-osu-capstone-testing.uc.r.appspot.com/api/get_genres',
         // 'http://127.0.0.1:5000/api/get_genres',
         payload

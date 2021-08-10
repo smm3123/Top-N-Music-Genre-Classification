@@ -28,7 +28,8 @@ def youtube_search(query):
     api_key = os.getenv('YOUTUBE_API_KEY')
 
     response = requests.get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=" + query +
-                            "&type=video&key=" + api_key)
+                            "&type=video&key=" + api_key,
+                            headers={'Access-Control-Allow-Origin': '*'})
 
     return json.loads(response.text)
 
