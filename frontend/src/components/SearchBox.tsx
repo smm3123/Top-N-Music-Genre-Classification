@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
-import { Box, Button } from '@material-ui/core';
+import { Box, Button, IconButton } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import SearchIcon from '@material-ui/icons/Search';
 
 import { ISearchBoxProps, IYTSearchItem } from '../types';
-import operations from '../operations';
 
+import operations from '../operations';
 import VideoCard from './VideoCard';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -16,7 +17,8 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingBottom: '20px',
     },
     input: {
-      width: '500px',
+      width: '100%',
+      maxWidth: '500px',
     },
     searchResults: {
       margin: 'auto',
@@ -54,6 +56,9 @@ const SearchBox: React.FC<ISearchBoxProps> = ({
   ) => {
     handleSearchSelect({ title, channel, thumbnail, videoId });
     console.log('Video selected, title: ' + title);
+    console.log('Video selected, channel: ' + channel);
+    console.log('Video selected, thumbnail: ' + thumbnail);
+    console.log('Video selected, videoId: ' + videoId);
   };
 
   return (
@@ -69,6 +74,14 @@ const SearchBox: React.FC<ISearchBoxProps> = ({
           variant="outlined"
           label="YouTube Search"
           onChange={(e) => setQuery(e.target.value)}
+          autoFocus
+          InputProps={{
+            endAdornment: (
+              <IconButton type="submit">
+                <SearchIcon />
+              </IconButton>
+            ),
+          }}
         />
       </form>
       <Box className={classes.searchResults}>

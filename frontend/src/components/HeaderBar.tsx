@@ -30,7 +30,8 @@ const useStyles = makeStyles((theme: Theme) =>
 const linkactive = {
   borderBottom: 'solid 3px #fff',
   paddingBottom: '1em',
-};
+  fontWeight: 'bold',
+} as const;
 
 const HeaderBar: React.FC = () => {
   const classes = useStyles();
