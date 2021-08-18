@@ -6,6 +6,7 @@ This project is a web application that allows users to search for a song on YouT
 ![search_results](https://raw.githubusercontent.com/smm3123/Top-N-Music-Genre-Classification/readme-update/img/website_2.jpg)
 
 The model generates confidence scores for each of the 10 genres.  The genre with the highest confidence score will be the prediction made. The top-5 confidence scores and the resulting genres are also displayed in addition to the top prediction on the webpage.
+
 ![classification_results](https://raw.githubusercontent.com/smm3123/Top-N-Music-Genre-Classification/readme-update/img/website_3.jpg)
 
 In addition to interacting with the ML model, users can visit the ‘How It Works’ page to get a more in depth discussion on how the model was trained and designed. The user can also visit the ‘About Us’ page to get information on the creators of the webpage.
