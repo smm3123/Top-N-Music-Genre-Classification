@@ -23,9 +23,9 @@ You can access the website [here](https://osu-capstone-testing.uc.r.appspot.com/
 2. From the /api folder, run `flask run --no-reload` through the terminal.
 
 ## Application Architecture
-![architecture](https://github.com/smm3123/Top-N-Music-Genre-Classification/blob/main/img/libraries_languages_apis.jpg?raw=true)
+![architecture](https://raw.githubusercontent.com/smm3123/Top-N-Music-Genre-Classification/main/img/high_level_architecture.jpg)
 
-![lib_lang_api](https://raw.githubusercontent.com/smm3123/Top-N-Music-Genre-Classification/main/img/high_level_architecture.jpg)
+![lib_lang_api](https://github.com/smm3123/Top-N-Music-Genre-Classification/blob/main/img/libraries_languages_apis.jpg?raw=true)
 
 ## Major Libraries, Languages, APIs, Development Tools, Servers, and Other Systems Used
 ### Frontend Development
